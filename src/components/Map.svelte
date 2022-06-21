@@ -9,6 +9,9 @@
   let container
   let map
 
+  let bounds = [[48.88706903240703, 2.398796081542969],
+                [48.83285961496447, 2.261466979980469]]
+
   setContext('leaflet_map', {
     getMap: () => map
   });
@@ -18,6 +21,9 @@
   onMount(async () => {
     let L = await import('leaflet');
     map = L.map(container, {drawControl: true}).setView([lat, lon], zoom)
+    map.setMaxBounds(bounds);
+    map.setMinZoom(zoom)
+    map.setMaxZoom(17)
     return () => {
       map.remove()
     }

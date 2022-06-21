@@ -15,6 +15,12 @@
       if (map) {
         rectangle.bindPopup("You can drag me!");
         rectangle.addTo(map);
+        console.log(rectangle.getCenter())
+        // fire fly to center of rectangle after setView
+        map.once('moveend',  (event) => {
+          map.flyTo(rectangle.getCenter(), 14)
+        });
+
         rectangle.on('mouseup', (event) => {
           // New coordinate of rectangle
           console.log(rectangle.getLatLngs())

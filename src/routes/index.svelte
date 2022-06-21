@@ -22,7 +22,7 @@
 <h1>Hello and welcome to my site!</h1>
 
 
-<Map width="400px" height="300px" lon={2.33} lat={48.86} zoom={12}>
+<Map width="25rem" height="20rem" lon={2.33} lat={48.86} zoom={11.4}>
   <Tiles />
   <Geojson bind:data style={geojsonStyle}/>
 </Map>
