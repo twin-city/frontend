@@ -4,16 +4,15 @@ Everything you need to build a Svelte project, powered by [`create-svelte`](http
 
 ## Creating a project
 
-If you're seeing this, you've probably already done this step. Congrats!
-
-```bash
-# create a new project in the current directory
-npm init svelte
-
 # create a new project in my-app
-npm init svelte my-app
+```bash
+npm install
 ```
 
+Mise au design de l'état
+```bash
+cp node_modules/@gouvfr static/dsfr
+```
 ## Developing
 
 Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
