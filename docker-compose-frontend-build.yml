@@ -1,0 +1,16 @@
+version: '3.4'
+services:
+  frontend-build:
+    build:
+      context: frontend
+      dockerfile: Dockerfile
+      target: build
+    image: twincity/${APP}-frontend-build:${APP_VERSION}
+    container_name: frontend-build
+    environment:
+      - APP_VERSION=${APP_VERSION}
+
+networks:
+  default:
+    external:
+      name: ${DC_NETWORK}
