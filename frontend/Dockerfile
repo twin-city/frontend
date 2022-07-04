@@ -14,7 +14,6 @@ RUN npm install
 # Add Design de l'etat dans le static
 RUN cp node_modules/@gouvfr/dsfr/dist static/dsfr -R
 
-# For production, see https://github.com/mikenikles/sapper-on-cloud-run/blob/master/Dockerfile
 ################################
 # Step 2: "development" target #
 ################################

@@ -15,10 +15,12 @@ services:
       - NODE_ENV=development
       - SKIP_PREFLIGHT_CHECK=true
       - FRONTEND_PORT=${FRONTEND_PORT}
+      - CHOKIDAR_USEPOLLING=true
     image: twin-city/frontend-dev
     container_name: ${FRONTEND_HOST}
     volumes:
       - ./frontend/src:/app/src
     ports:
-      - "${FRONTEND_PORT}:${FRONTEND_PORT}"
+      - "${FRONTEND_PORT}:3000"
       - "35729:35729"
+      - "24678:24678"

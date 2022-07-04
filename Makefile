@@ -7,7 +7,7 @@ export APP_VERSION := 0.1
 # compose command to merge production file and and dev/tools overrides
 export COMPOSE?=docker-compose
 export DC_UP_ARGS = --force-recreate #s--build
-
+export DC_BUILD_ARGS = --no-cache
 # FRONTEND
 export FRONTEND_PORT=3000
 export FRONTEND_HOST = frontend
