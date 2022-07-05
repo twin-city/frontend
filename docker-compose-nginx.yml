@@ -18,7 +18,7 @@ services:
     ports:
       - "$PORT:80"
     volumes:
-      - ../unity-project/BuildWeb:/usr/share/nginx/html/webgl
+      - ${WEBGL_DIR}/BuildWeb:/usr/share/nginx/html/webgl
       #restart: always
     logging:
         #driver: none

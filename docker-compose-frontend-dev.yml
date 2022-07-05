@@ -10,14 +10,18 @@ services:
         http_proxy: ${http_proxy}
         https_proxy: ${https_proxy}
         no_proxy: ${no_proxy}
+    stdin_open: true
     environment:
       - NODE_ENV=development
-      - FRONTEND_PORT=${FRONTEND_PORT}
-      - CHOKIDAR_USEPOLLING=true
+      - SKIP_PREFLIGHT_CHECK=true
     image: twin-city/frontend-dev
     container_name: ${FRONTEND_HOST}
     volumes:
       - ./frontend/src:/app/src
     ports:
       - "${FRONTEND_PORT}:3000"
-      - 24678:24678
+
+networks:
+  default:
+    external:
+      name: ${DC_NETWORK}

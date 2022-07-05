@@ -4,6 +4,7 @@
 	import Nav from '../layouts/Nav.svelte';
 	import Footer from '../layouts/Footer.svelte';
 
+	export let segment='/';
 </script>
 
 <svelte:head>
@@ -11,7 +12,6 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<link rel="stylesheet" href="dsfr/dsfr.min.css">
 	<link rel="stylesheet" href="dsfr/utility/utility.min.css">
-
 	<meta name="theme-color" content="#000091"><!-- Défini la couleur de thème du navigateur (Safari/Android) -->
 	<link rel="apple-touch-icon" href="dsfr/favicon/apple-touch-icon.png"><!-- 180×180 -->
 	<link rel="icon" href="dsfr/favicon/favicon.svg" type="image/svg+xml">
@@ -20,24 +20,18 @@
 	<!-- Modifier les chemins relatifs des favicons en fonction de la structure du projet -->
 	<!-- Dans le fichier manifest.webmanifest aussi, modifier les chemins vers les images -->
 
-	<script type="module" src="dsfr/dsfr.module.min.js"></script>
-	<script type="text/javascript" nomodule src="dsfr/dsfr.nomodule.min.js"></script>
+	<script type="module" src="/dsfr/dsfr.module.min.js"></script>
+	<script type="text/javascript" nomodule src="/dsfr/dsfr.nomodule.min.js"></script>
 </svelte:head>
 
-
 <Header/>
-
-<Nav>
-</Nav>
-
+<Nav {segment} />
 <main class="fr-container">
 	<slot />
 </main>
-
-<Footer/>
+<Footer />
 
 <style>
-
 
 	@media (min-width: 480px) {
 		footer {

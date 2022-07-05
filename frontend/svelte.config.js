@@ -8,7 +8,7 @@ const config = {
 			pages: 'build',
 			assets: 'build',
 			fallback: null,
-			precompress: false
+			precompress: false,
 		}),
 		prerender: {
 			'default': true
@@ -20,6 +20,7 @@ const config = {
 			usePolling: true,
 		},
 	},
+}
 };
 
 export default config;
