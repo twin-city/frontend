@@ -42,15 +42,15 @@ frontend-down:
 #  NGINX     #
 ##############
 
-nginx-dev: network
+nginx-dev:
 	@$(COMPOSE) -f docker-compose-nginx-dev.yml up -d $(DC_UP_ARGS)
-nginx-dev-stop: network
+nginx-dev-stop:
 	@$(COMPOSE) -f docker-compose-nginx-dev.yml down
 nginx-dev-exec:
 	@$(COMPOSE) -f docker-compose-nginx-dev.yml exec nginx-dev bash
 nginx-dev-down:
 	@$(COMPOSE) -f docker-compose-nginx-dev.yml down
-nginx-prod: network
+nginx-prod:
 	@$(COMPOSE) -f docker-compose-nginx.yml up -d $(DC_UP_ARGS)
 nginx-down:
 	@$(COMPOSE) -f docker-compose-nginx.yml down
@@ -62,7 +62,7 @@ nginx-dev-exec:
 ###############
 build: frontend-build nginx-build backend-build
 
-frontend-build: network frontend-build-dist $(BUILD_DIR)/$(FILE_FRONTEND_DIST_APP_VERSION)
+frontend-build: frontend-build-dist $(BUILD_DIR)/$(FILE_FRONTEND_DIST_APP_VERSION)
 
 nginx-build:
 	@echo building ${APP} nginx
@@ -78,7 +78,9 @@ build-dir:
 	@if [ ! -d "$(BUILD_DIR)" ] ; then mkdir -p $(BUILD_DIR) ; fi
 
 $(BUILD_DIR)/$(FILE_FRONTEND_DIST_APP_VERSION): build-dir
-	@$(COMPOSE) -f docker-compose-frontend-build.yml run -T frontend-build sh -c "npm run build > /dev/null 2>&1 && tar czf - public -C /app" > $(BUILD_DIR)/$(FILE_FRONTEND_DIST_APP_VERSION)
+	#@$(COMPOSE) -f docker-compose-frontend-build.yml run frontend-build bash
+	tar -czf $(BUILD_DIR)/$(FILE_FRONTEND_DIST_APP_VERSION) frontend/build
+	# -c "npm run build > /dev/null 2>&1 && tar czf - public -C /app" > $(BUILD_DIR)/$(FILE_FRONTEND_DIST_APP_VERSION)
 
 ##############
 #  GENERAL   #

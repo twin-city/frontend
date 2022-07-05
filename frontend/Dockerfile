@@ -14,6 +14,8 @@ RUN npm install
 # Add Design de l'etat dans le static
 RUN cp node_modules/@gouvfr/dsfr/dist static/dsfr -R
 
+EXPOSE 3000
+
 ################################
 # Step 2: "development" target #
 ################################
@@ -24,6 +26,7 @@ EXPOSE $FRONTEND_PORT
 
 ENV PORT=$FRONTEND_PORT
 ENV HOST=0.0.0.0
+EXPOSE 24678
 
 CMD [ "npm", "run","dev" ]
 

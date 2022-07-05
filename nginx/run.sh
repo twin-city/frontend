@@ -7,7 +7,7 @@ set -e
 
 SED_REPLACE=`env | sed -e 's#\([^=]*\)=\(.*\)\s*$#s\#<\1>\#\2\#g;#'| tr '\n' ' ' | sed 's/$/\n/'`
 
-[ -z "${APP}" -o -z "${BACKEND_HOST}" -o -z "${BACKEND_PORT}" ] && echo "missing some env var" && exit 1
+[ -z "${APP}" ] && echo "missing some env var" && exit 1
 
 
 (

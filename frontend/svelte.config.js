@@ -10,7 +10,16 @@ const config = {
 			fallback: null,
 			precompress: false
 		}),
-	}
+		prerender: {
+			'default': true
+		}
+	},
+	vite: {
+	server: {
+		watch: {
+			usePolling: true,
+		},
+	},
 };
 
 export default config;

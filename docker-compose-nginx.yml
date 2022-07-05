@@ -1,8 +1,7 @@
 version: '3.4'
 services:
   nginx:
-    image: datalab-mi/nginx-dev:${APP_VERSION}
-    restart: always
+    image: twin-city/nginx-prod:${APP_VERSION}
     build:
       context: nginx
       target: production
@@ -18,13 +17,11 @@ services:
       - PORT
     ports:
       - "$PORT:80"
+    volumes:
+      - ../unity-project/BuildWeb:/usr/share/nginx/html/webgl
       #restart: always
     logging:
         #driver: none
         options:
           max-size: "10m"
           max-file: "1"
-networks:
-  default:
-    external:
-      name: ${DC_NETWORK}

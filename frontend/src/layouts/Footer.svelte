@@ -33,7 +33,7 @@
             <div class="fr-footer__partners-logos">
                 <div class="fr-footer__partners-main">
                     <a class="footer__partners-link" href="#">
-                        <img class="fr-footer__logo" style="height: 5.625rem" src="../../../example/img/placeholder.16x9.png" alt="[À MODIFIER - texte alternatif de l’image]" />
+                        <img class="fr-footer__logo" style="height: 5.625rem"  alt="[À MODIFIER - texte alternatif de l’image]" />
                         <!-- L’alternative de l’image (attribut alt) doit impérativement être renseignée et reprendre le texte visible dans l’image -->
                     </a>
                 </div>
@@ -41,19 +41,19 @@
                     <ul>
                         <li>
                             <a class="fr-footer__partners-link" href="#">
-                                <img class="fr-footer__logo" style="height: 5.625rem" src="../../../example/img/placeholder.16x9.png" alt="[À MODIFIER - texte alternatif de l’image]" />
+                                <img class="fr-footer__logo" style="height: 5.625rem" alt="[À MODIFIER - texte alternatif de l’image]" />
                                 <!-- L’alternative de l’image (attribut alt) doit impérativement être renseignée et reprendre le texte visible dans l’image -->
                             </a>
                         </li>
                         <li>
                             <a class="fr-footer__partners-link" href="#">
-                                <img class="fr-footer__logo" style="height: 5.625rem" src="../../../example/img/placeholder.1x1.png" alt="[À MODIFIER - texte alternatif de l’image]" />
+                                <img class="fr-footer__logo" style="height: 5.625rem"  alt="[À MODIFIER - texte alternatif de l’image]" />
                                 <!-- L’alternative de l’image (attribut alt) doit impérativement être renseignée et reprendre le texte visible dans l’image -->
                             </a>
                         </li>
                         <li>
                             <a class="fr-footer__partners-link" href="#">
-                                <img class="fr-footer__logo" style="height: 5.625rem" src="../../../example/img/placeholder.9x16.png" alt="[À MODIFIER - texte alternatif de l’image]" />
+                                <img class="fr-footer__logo" style="height: 5.625rem"  alt="[À MODIFIER - texte alternatif de l’image]" />
                                 <!-- L’alternative de l’image (attribut alt) doit impérativement être renseignée et reprendre le texte visible dans l’image -->
                             </a>
                         </li>
