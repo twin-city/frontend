@@ -1,0 +1,27 @@
+version: '3.4'
+services:
+  nginx:
+    image: twin-city/nginx-prod:${APP_VERSION}
+    build:
+      context: nginx
+      target: production
+      dockerfile: Dockerfile
+      args:
+        app_name: ${APP}
+        app_ver: ${APP_VERSION}
+    container_name: nginx
+    environment:
+      - APP
+      - BACKEND_HOST
+      - BACKEND_PORT
+      - PORT
+    ports:
+      - "$PORT:80"
+    volumes:
+      - ${WEBGL_DIR}/BuildWeb:/usr/share/nginx/html/webgl
+      #restart: always
+    logging:
+        #driver: none
+        options:
+          max-size: "10m"
+          max-file: "1"

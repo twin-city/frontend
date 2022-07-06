@@ -1,0 +1,13 @@
+version: '3.4'
+services:
+  frontend-build:
+    build:
+      context: frontend
+      dockerfile: Dockerfile
+      target: build
+    image: twin-city/${APP}-build:${APP_VERSION}
+    container_name: frontend-build
+    environment:
+      - APP_VERSION=${APP_VERSION}
+      - NODE_ENV=production
+      - FRONTEND_PORT

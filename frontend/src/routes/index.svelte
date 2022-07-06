@@ -19,13 +19,28 @@
 
 </script>
 
-<h1>Hello and welcome to my site!</h1>
+<h1>Le projet</h1>
 
+<p>Explorer le potentiel de l'intelligence artificielle grâce
+aux jumeaux numériques de villes.
+</p>
 
-<Map width="25rem" height="20rem" lon={2.33} lat={48.86} zoom={11.4}>
+<h1>Démonstratation</h1>
+
+<p>Faites glisser le carré bleu sur la carte de Paris de manière à sélctionner
+un quartier.
+</p>
+
+<Map width="35rem" height="30rem" lon={2.33} lat={48.86} zoom={11.4}>
   <Tiles />
   <Geojson bind:data style={geojsonStyle}/>
 </Map>
 
+
+<button class="fr-btn fr-fi-checkbox-circle-line fr-btn--icon-left">
+    Générer !
+</button>
+
 <p>{data}</p>
-<a href="/about">About my site</a>
+
+<h1>Comment ça marche?</h1>

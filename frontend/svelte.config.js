@@ -8,9 +8,19 @@ const config = {
 			pages: 'build',
 			assets: 'build',
 			fallback: null,
-			precompress: false
+			precompress: false,
 		}),
-	}
+		prerender: {
+			'default': true
+		}
+	},
+	vite: {
+	server: {
+		watch: {
+			usePolling: true,
+		},
+	},
+}
 };
 
 export default config;

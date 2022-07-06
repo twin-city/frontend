@@ -1,0 +1,25 @@
+version: '3.4'
+services:
+  nginx-dev:
+    image: twin-city/nginx-dev
+    container_name: nginx-dev
+    build:
+      context: nginx
+      target: development
+      dockerfile: Dockerfile
+      args:
+        http_proxy: ${http_proxy}
+        https_proxy: ${https_proxy}
+        no_proxy: ${no_proxy}
+    environment:
+      - APP
+      - FRONTEND_HOST
+      - FRONTEND_PORT
+    ports:
+      - "$PORT:80"
+    volumes:
+      - ${WEBGL_PATH}/BuildWeb:/usr/share/nginx/html/webgl
+networks:
+  default:
+    external:
+      name: ${DC_NETWORK}

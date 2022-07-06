@@ -2,7 +2,7 @@
 	"name": "frontend",
 	"version": "0.0.1",
 	"scripts": {
-		"dev": "svelte-kit dev",
+		"dev": "svelte-kit dev --host 0.0.0.0",
 		"build": "svelte-kit build",
 		"package": "svelte-kit package",
 		"preview": "svelte-kit preview",
@@ -28,6 +28,7 @@
 	"dependencies": {
 		"@sveltejs/adapter-static": "^1.0.0-next.34",
 		"leaflet": "^1.1.0",
-		"leaflet-path-drag": "^1.1.0"
+		"leaflet-path-drag": "^1.1.0",
+		"@gouvfr/dsfr": "^1.6.0"
 	}
 }

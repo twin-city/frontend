@@ -1,0 +1,27 @@
+version: '3.4'
+services:
+  frontend-dev:
+    build:
+      context: frontend
+      dockerfile: Dockerfile
+      target: dev
+      args:
+        FRONTEND_PORT: ${FRONTEND_PORT}
+        http_proxy: ${http_proxy}
+        https_proxy: ${https_proxy}
+        no_proxy: ${no_proxy}
+    stdin_open: true
+    environment:
+      - NODE_ENV=development
+      - SKIP_PREFLIGHT_CHECK=true
+    image: twin-city/frontend-dev
+    container_name: ${FRONTEND_HOST}
+    volumes:
+      - ./frontend/src:/app/src
+    ports:
+      - "${FRONTEND_PORT}:3000"
+
+networks:
+  default:
+    external:
+      name: ${DC_NETWORK}
