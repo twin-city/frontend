@@ -18,7 +18,7 @@ services:
     ports:
       - "$PORT:80"
     volumes:
-      - ${WEBGL_DIR}/BuildWeb:/usr/share/nginx/html/webgl
+      - ${WEBGL_DIR}:/usr/share/nginx/html/webgl
       #restart: always
     logging:
         #driver: none

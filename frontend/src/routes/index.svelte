@@ -6,6 +6,7 @@
 	import Map from '../components/Map.svelte';
   import Tiles from '../components/Tiles.svelte';
   import Geojson from '../components/Geojson.svelte';
+  import Webgl from '../components/Webgl.svelte';
 
   var geojsonStyle = {
     "color": "#0307fc",
@@ -42,5 +43,6 @@ un quartier.
 </button>
 
 <p>{data}</p>
+
 
 <h1>Comment ça marche?</h1>

@@ -4,7 +4,7 @@
 	import Nav from '../layouts/Nav.svelte';
 	import Footer from '../layouts/Footer.svelte';
 
-	export let segment='/';
+	export let segment='/explore';
 </script>
 
 <svelte:head>

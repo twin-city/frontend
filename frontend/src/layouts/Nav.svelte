@@ -36,6 +36,9 @@ function setSegment(e){
         <li  class="fr-nav__item">
             <a on:click={setSegment} aria-current="{segment === '/example' ? 'page' : undefined}" class="fr-nav__link" href="example" >example</a>
         </li>
+        <li  class="fr-nav__item">
+            <a on:click={setSegment} aria-current="{segment === '/explore' ? 'page' : undefined}" class="fr-nav__link" href="explore" >explore</a>
+        </li>
 		</ul>
   </div>
 </nav>
