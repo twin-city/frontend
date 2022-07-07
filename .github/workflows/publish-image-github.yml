@@ -42,4 +42,4 @@ jobs:
           context: ./nginx
           target: production
           no-cache: false
-          build-args: app_name=twincity, app_ver=v0.0.1
+          build-args: app_name=twincity,app_ver=v0.0.1
