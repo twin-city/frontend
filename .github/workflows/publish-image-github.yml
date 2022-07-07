@@ -19,7 +19,7 @@ jobs:
         name: Set the tag env
         id: step_one
         run: |
-          echo "TAG=${GITHUB_REF#refs/*/}" >> $GITHUB_ENV
+          echo "TAG=${GITHUB_REF#refs/*/}"| sed -e 's/\//-/g' >> $GITHUB_ENV
       -
         name: Set tag env in artifacts
         run: |
