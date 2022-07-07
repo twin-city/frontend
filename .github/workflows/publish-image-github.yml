@@ -36,5 +36,5 @@ jobs:
       -
         name: 🚀 Deploy
         run: |
-          docker image twin-city/nginx-prod:v0.0.1 ghcr.io/twin-city/frontend:latest
+          docker image tag twin-city/nginx-prod:v0.0.1 ghcr.io/twin-city/frontend:latest
           docker push ghcr.io/twin-city/frontend:latest
