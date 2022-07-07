@@ -6,9 +6,6 @@ on:
     branches:
       - feat/ci
 
-# Name of the docker registery
-env:
-  APP: twin-city
 
 jobs:
   build-deploy:
@@ -27,8 +24,6 @@ jobs:
         name: Set tag env in artifacts
         run: |
           echo "export APP_VERSION=${{ env.TAG }}" > artifacts
-          echo "export APP=${{ env.APP }}" >> artifacts
-        #run: echo "export APP_VERSION=${GITHUB_REF#refs/*/}" >> artifacts
       -
         name: 🐳 Build Static Frontend
         run: make build
@@ -42,6 +37,6 @@ jobs:
       -
         name: 🚀 Deploy
         run: |
-          docker image tag twin-city/nginx-prod:${{ env.TAG }} ghcr.io/${{ env.APP }}/frontend:${{ env.TAG }}
-          docker push ghcr.io/${{ env.APP }}/frontend:${{ env.TAG }}
+          docker image tag twin-city/nginx-prod:${{ env.TAG }} ghcr.io/twin-city/frontend:${{ env.TAG }}
+          docker push ghcr.io/twin-city/frontend:${{ env.TAG }}
           echo " Deploy tag : {{ env.TAG }}" >> $GITHUB_STEP_SUMMARY
