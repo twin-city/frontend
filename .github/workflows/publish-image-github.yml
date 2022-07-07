@@ -35,4 +35,6 @@ jobs:
           password: ${{ secrets.GITHUB_TOKEN }}
       -
         name: 🚀 Deploy
-        run: docker push ghcr.io/twin-city/frontend:latest
+        run: |
+          docker image twin-city/nginx-prod:v0.0.1 ghcr.io/twin-city/frontend:latest
+          docker push ghcr.io/twin-city/frontend:latest
