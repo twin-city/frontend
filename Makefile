@@ -1,7 +1,7 @@
 SHELL = /bin/bash
 
 export CURRENT_PATH := $(shell pwd)
-export APP = twincity-frontend
+export APP = twincity
 export APP_VERSION := 0.1
 
 # compose command to merge production file and and dev/tools overrides
