@@ -2,6 +2,8 @@ name: Push Docker image to GitHub container
 on:
   release:
     types: [edited, released]
+
+jobs:    
   build:
     name: 🐳 Build docker image
     runs-on: ubuntu-latest
