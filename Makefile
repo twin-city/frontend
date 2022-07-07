@@ -7,7 +7,7 @@ export APP_VERSION := 0.1
 # compose command to merge production file and and dev/tools overrides
 export COMPOSE?=docker-compose
 export DC_UP_ARGS = --force-recreate #s--build
-export DC_BUILD_ARGS = --no-cache
+export DC_BUILD_ARGS = #	--no-cache
 
 #NETWORK
 export DC_NETWORK := $(shell echo ${APP} | tr '[:upper:]' '[:lower:]')
@@ -23,6 +23,7 @@ export WEBGL_DIR = $(shell dirname ${CURRENT_PATH})/unity-project/WebGL-20220706
 export BUILD_DIR =${CURRENT_PATH}/${APP}-build
 export FILE_FRONTEND_DIST_APP_VERSION = $(APP)-$(APP_VERSION)-frontend-dist.tar.gz
 
+include ./artifacts
 #############
 #  Network  #
 #############
@@ -66,6 +67,9 @@ nginx-dev-exec:
 	@$(COMPOSE) -f docker-compose-nginx-dev.yml exec nginx-dev bash
 nginx-dev-down:
 	@$(COMPOSE) -f docker-compose-nginx-dev.yml down
+nginx-dev-build:
+	@$(COMPOSE) -f docker-compose-nginx-dev.yml build $(DC_BUILD_ARGS)
+
 nginx-prod:
 	@$(COMPOSE) -f docker-compose-nginx.yml up -d $(DC_UP_ARGS)
 nginx-down:
@@ -74,7 +78,7 @@ nginx-down:
 ###############
 # BUILD STAGE #
 ###############
-build: frontend-build nginx-build backend-build
+build: frontend-build nginx-build
 
 frontend-build: frontend-build-dist $(BUILD_DIR)/$(FILE_FRONTEND_DIST_APP_VERSION)
 
@@ -92,10 +96,10 @@ build-dir:
 	@if [ ! -d "$(BUILD_DIR)" ] ; then mkdir -p $(BUILD_DIR) ; fi
 
 $(BUILD_DIR)/$(FILE_FRONTEND_DIST_APP_VERSION): build-dir
-	#@$(COMPOSE) -f docker-compose-frontend-build.yml run frontend-build bash
-	tar -czf $(BUILD_DIR)/$(FILE_FRONTEND_DIST_APP_VERSION) frontend/build
-	# -c "npm run build > /dev/null 2>&1 && tar czf - public -C /app" > $(BUILD_DIR)/$(FILE_FRONTEND_DIST_APP_VERSION)
+	$(COMPOSE) -f docker-compose-frontend-build.yml run -T frontend-build sh -c "npm run build > /dev/null 2>&1 && tar czf - build/ -C /app" > $(BUILD_DIR)/$(FILE_FRONTEND_DIST_APP_VERSION)
 
+test:
+	echo "test" > test
 ##############
 #  GENERAL   #
 ##############

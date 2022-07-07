@@ -5,7 +5,7 @@ services:
       context: frontend
       dockerfile: Dockerfile
       target: build
-    image: twin-city/${APP}-build:${APP_VERSION}
+    image: twin-city/frontend-build:${APP_VERSION}
     container_name: frontend-build
     environment:
       - APP_VERSION=${APP_VERSION}
