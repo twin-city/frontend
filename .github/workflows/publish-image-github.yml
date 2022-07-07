@@ -23,8 +23,7 @@ on:
         uses: docker/build-push-action@v3
         with:
           push: true
-          tags: user/app:latest
-          repository: twin-city/frontend:
+          tags: ghcr.io/twin-city/frontend:latest
           context: "{{defaultContext}}:nginx"
           target: production
           no-cache: false
