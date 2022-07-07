@@ -42,4 +42,4 @@ jobs:
           context: ./nginx
           target: production
           no-cache: false
-          #build-args: app_name=, app_ver=
+          build-args: app_name=frontend, app_ver=v0.0.1
