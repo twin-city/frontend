@@ -39,7 +39,7 @@ jobs:
         with:
           push: true
           tags: ghcr.io/twin-city/frontend:latest
-          context: "{{defaultContext}}:nginx"
+          context: ./nginx
           target: production
           no-cache: false
           #build-args: app_name=, app_ver=
