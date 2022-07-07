@@ -48,5 +48,5 @@ jobs:
           target: production
           no-cache: false
           build-args: |
-           app_name=$APP
+           app_name=${{ env.APP }}
            app_ver=v0.0.1
