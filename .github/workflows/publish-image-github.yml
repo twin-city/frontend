@@ -5,7 +5,9 @@ on:
   push:
     branches:
       - feat/ci
-
+    pull_request:
+      branches:
+      - master
 
 jobs:
   build-deploy:
