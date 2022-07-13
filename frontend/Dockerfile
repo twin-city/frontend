@@ -13,7 +13,13 @@ COPY . .
 #RUN npm config set strict-ssl false #Do not check certificate, proxy fault
 
 # Add Design de l'etat dans le static
-RUN cp node_modules/@gouvfr/dsfr/dist static/dsfr -R
+RUN  mkdir -p static/dsfr \
+ &&  cp node_modules/@gouvfr/dsfr/dist/dsfr.module.min.js static/dsfr \
+ &&  cp node_modules/@gouvfr/dsfr/dist/dsfr.nomodule.min.js static/dsfr \
+ &&  cp node_modules/@gouvfr/dsfr/dist/dsfr.min.css static/dsfr \
+ &&  cp -r node_modules/@gouvfr/dsfr/dist/utility static/dsfr \
+ &&  cp -r node_modules/@gouvfr/dsfr/dist/favicon static/dsfr  \
+ &&  cp -r node_modules/@gouvfr/dsfr/dist/icons static/dsfr
 
 
 ################################
@@ -33,4 +39,5 @@ CMD [ "npm", "run","dev" ]
 # Step 3:   "build" target     #
 ################################
 FROM base as build
+
 CMD ["npm", "run", "build"]
