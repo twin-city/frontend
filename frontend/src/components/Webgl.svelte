@@ -5,6 +5,8 @@
 
 <script>
 import { onMount, setContext } from 'svelte'
+
+export let buildUrl = "https://webgl.s3-website.fr-par.scw.cloud/Build";
 export let width ;
 export let height;
 
@@ -40,7 +42,7 @@ onMount(() => {
 		updateBannerVisibility();
 	}
 
-	var buildUrl = "webgl/Build";
+
 	var loaderUrl = buildUrl + "/BuildWeb.loader.js";
 	var config = {
 		dataUrl: buildUrl + "/BuildWeb.data.gz",
