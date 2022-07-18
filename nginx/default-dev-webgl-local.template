@@ -1,0 +1,58 @@
+upstream frontend {
+  server <FRONTEND_HOST>:<FRONTEND_PORT>;
+}
+
+server {
+    listen 80;
+    listen 35729;
+    server_name  localhost;
+
+    location / {
+        proxy_pass http://frontend;
+        proxy_http_version 1.1;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection 'upgrade';
+        proxy_set_header Host $host;
+        # Handle websocket
+        proxy_next_upstream off;
+        proxy_set_header Host $http_host;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection "upgrade";
+    }
+
+
+    error_page   500 502 503 504  /50x.html;
+    location = /50x.html {
+        root   /usr/share/nginx/html;
+    }
+
+
+    location  /webgl/ {
+         alias /usr/share/nginx/html/webgl/;
+      }
+    # On-disk gzip-precompressed data files should be served with compression enabled:
+    location ~ .+\.(data|symbols\.json)\.gz$ {
+        root   /usr/share/nginx/html;
+        gzip off; # Do not attempt dynamic gzip compression on an already compressed file
+        add_header Content-Encoding gzip;
+        default_type application/octet-stream;
+    }
+
+    # On-disk gzip-precompressed JavaScript code files:
+    location ~ .+\.js\.gz$ {
+        root   /usr/share/nginx/html;
+        gzip off; # Do not attempt dynamic gzip compression on an already compressed file
+        add_header Content-Encoding gzip;
+        default_type application/javascript;
+    }
+
+    # On-disk gzip-precompressed WebAssembly files:
+    location ~ .+\.wasm\.gz$ {
+        root   /usr/share/nginx/html;
+        gzip off; # Do not attempt dynamic gzip compression on an already compressed file
+        add_header Content-Encoding gzip;
+        # Enable streaming WebAssembly compilation by specifying the correct MIME type for
+        # Wasm files.
+        default_type application/wasm;
+    }
+}
