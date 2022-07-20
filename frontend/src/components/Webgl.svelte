@@ -6,8 +6,8 @@
 <script>
 import { onMount, setContext } from 'svelte'
 
-export let buildUrl = "https://webgl.s3-website.fr-par.scw.cloud/Build";
-export let width ;
+export let buildUrl;
+export let width;
 export let height;
 
 onMount(() => {
