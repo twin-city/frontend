@@ -7,6 +7,7 @@
   import Tiles from '../components/Tiles.svelte';
   import Geojson from '../components/Geojson.svelte';
   import Webgl from '../components/Webgl.svelte';
+  //import ImageViewer from '../components/ImageViewer.svelte';
 
   var geojsonStyle = {
     "color": "#0307fc",
@@ -40,7 +41,9 @@
 aux jumeaux numériques de villes.
 </p>
 
-<h1>Démonstratation</h1>
+<h1>Démonstration</h1>
+
+<h2>Génénaration de quartiers à Paris dans un moteur de jeu</h2>
 
 <p>Faites glisser le carré bleu sur la carte de Paris de manière à sélectionner
 un quartier. Puis valider votre choix en appuyant sur le bouton çi-dessous.
@@ -50,9 +53,13 @@ un quartier. Puis valider votre choix en appuyant sur le bouton çi-dessous.
     <p>Cette action peut prendre jusqu'à 10 minutes!
     </p>
 </div>
+
 <button on:click={generateWebgl} disabled='{disabled}' class="fr-btn fr-fi-checkbox-circle-line fr-btn--icon-left">
     Générer !
 </button>
+
+
+
 
 <div class='container'>
 <Map width="35rem" height="30rem" lon={2.33} lat={48.86} zoom={11.4}>
@@ -60,10 +67,28 @@ un quartier. Puis valider votre choix en appuyant sur le bouton çi-dessous.
   <Geojson bind:data style={geojsonStyle}/>
 </Map>
 
-<Webgl buildUrl={buildUrl} width="35rem" height="30rem" />
+<Webgl buildUrl={buildUrl} width="35rem" height="30rem" /> 
+</div>
+<div class="fr-highlight">
+    <p>La touche N permet de changer de caméra.
+    </p>
+</div>
+
+<h2>Récupération des images annotées</h2>
+
+Le quartier est construit et le jeu tourne en boucle. Des images annotées sont
+extraites du moteur.
+
+<div class='container'>
+
+<img width="560"  src="https://dataset-lp.s3.fr-par.scw.cloud/RGB3e8451c9-7ddb-43d9-ae89-90dfd9a010db/rgb_10.png">
+<img width="560"  src="https://dataset-lp.s3.fr-par.scw.cloud/SemanticSegmentation06070cb5-6e43-4253-82df-7c37fa2200ef/segmentation_10.png">
+
 </div>
 
 <br>
+
+
 <h1>Comment ça marche?</h1>
 
 <ol>
@@ -109,5 +134,7 @@ un quartier. Puis valider votre choix en appuyant sur le bouton çi-dessous.
   flex-wrap: wrap;
   justify-content:  space-between;
   align-items: center;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
 }
 </style>
