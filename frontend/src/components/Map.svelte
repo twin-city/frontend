@@ -3,12 +3,13 @@
 
   export let lat = 0
   export let lon = 0
-  export let zoom = 6 // default zoom
+  export let zoom = 5 // default zoom
   export let width = '100%'
   export let height = '100px'
   let container
   let map
 
+  // Bound of the map
   let bounds = [[48.90, 2.41],
                 [48.82, 2.26]]
 

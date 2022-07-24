@@ -60,7 +60,7 @@ un quartier. Puis valider votre choix en appuyant sur le bouton çi-dessous.
   <Geojson bind:data style={geojsonStyle}/>
 </Map>
 
- <Webgl buildUrl={buildUrl} width="35rem" height="30rem" />
+<Webgl buildUrl={buildUrl} width="35rem" height="30rem" />
 </div>
 
 <br>

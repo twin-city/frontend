@@ -4,11 +4,25 @@
 	</svelte:head>
 
 <script>
-import { onMount, setContext } from 'svelte'
+import { onMount, onDestroy, setContext } from 'svelte'
 
 export let buildUrl;
 export let width;
 export let height;
+
+let unityInstance=undefined ;
+
+function onQuit() {
+	alert('Quit the game')
+}
+
+
+onDestroy(() => {
+	console.log('onDestroy')
+	if (unityInstance != undefined){
+			unityInstance.Quit().then(onQuit)
+	}
+})
 
 onMount(() => {
 	var container = document.querySelector("#unity-container");
@@ -70,24 +84,32 @@ onMount(() => {
 		unityShowBanner('WebGL builds are not supported on mobile devices.');
 	} else {
 		console.log('else')
+		container.style.height = height;
+		container.style.width = width;
+
 		canvas.style.width = width;
-		canvas.style.height = height;
+		canvas.style.height = "calc(" + height + " - 5rem)";
+		container.style.display = 'block'
 	}
 	loadingBar.style.display = "block";
-
 	var script = document.createElement("script");
 	script.src = loaderUrl;
-	script.onload = () => {
-		createUnityInstance(canvas, config, (progress) => {
-			progressBarFull.style.width = 100 * progress + "%";
-		}).then((unityInstance) => {
-			loadingBar.style.display = "none";
-			fullscreenButton.onclick = () => {
-				unityInstance.SetFullscreen(1);
-			};
-		}).catch((message) => {
+	script.onload = async () => {
+		console.log('script.onload')
+		try {
+			unityInstance = await createUnityInstance(canvas, config, (progress) => {
+				progressBarFull.style.width = 100 * progress + "%";
+				console.log(progress)
+			})
+			await (async (unityInstance) => {
+				loadingBar.style.display = "none";
+				fullscreenButton.onclick = () => {
+					unityInstance.SetFullscreen(1);
+				};
+			})
+		} catch(message) {
 			alert(message);
-		});
+		}
 	};
 	document.body.appendChild(script);
 });
@@ -109,7 +131,17 @@ onMount(() => {
 	</div>
 </div>
 
-
 <style>
-
+#unity-container { background: #231F20;display: none; }
+#unity-canvas { background: #231F20 }
+#unity-loading-bar {
+	display: none;
+	margin-left: 5px;
+}
+#unity-progress-bar-empty { width: 141px; height: 18px; margin-top: 10px; background: url('webgl/progress-bar-empty-dark.png') no-repeat center }
+#unity-progress-bar-full { width: 0%; height: 18px; margin-top: 10px; background: url('webgl/progress-bar-full-dark.png') no-repeat center }
+#unity-webgl-logo { float:left; width: 204px; height: 38px; background: url('webgl/webgl-logo.png') no-repeat center }
+#unity-build-title { float: right; margin-right: 10px; line-height: 38px; font-family: arial; font-size: 18px }
+#unity-fullscreen-button { float: right; width: 38px; height: 38px; background: url('webgl/fullscreen-button.png') no-repeat center }
+#unity-warning { position: absolute; left: 50%; top: 5%; transform: translate(-50%); background: white; padding: 10px; display: none }
 </style>
