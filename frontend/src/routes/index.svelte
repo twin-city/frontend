@@ -97,7 +97,7 @@ extraites du moteur.
 
 <div class="fr-download fr-enlarge-link fr-download--card">
     <p>
-        <a href="[À MODIFIER]" download class="fr-download__link">Télécharger la base de données complète.
+        <a  download class="fr-download__link">Télécharger la base de données complète.
             <span class="fr-download__detail">
                 JPG | JSON – 230,41 Mo
             </span>
