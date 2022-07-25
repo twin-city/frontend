@@ -37,8 +37,14 @@
 
 <h1>Le projet</h1>
 
-<p>Explorer le potentiel de l'intelligence artificielle grâce
-aux jumeaux numériques de villes.
+<p>
+<em>Explorer le potentiel de l'intelligence artificielle grâce
+aux jumeaux numériques de villes.</em>
+</p>
+
+<p>Pour de prouver l'efficacité de la méthode, le premier problème posé est le floutage
+de véhicules, de personnes et de fenêtres.
+Il s'agit donc de générer des données synthétiques annotées pour le floutage.
 </p>
 
 <h1>Démonstration</h1>
@@ -70,7 +76,8 @@ un quartier. Puis valider votre choix en appuyant sur le bouton çi-dessous.
 <Webgl buildUrl={buildUrl} width="35rem" height="30rem" />
 </div>
 <div class="fr-highlight">
-    <p>La touche N permet de changer de caméra.
+    <p>La touche C permet de changer de caméra,
+    La touche J passe en caméra libre.
     </p>
 </div>
 
@@ -79,11 +86,24 @@ un quartier. Puis valider votre choix en appuyant sur le bouton çi-dessous.
 Le quartier est construit et le jeu tourne en boucle. Des images annotées sont
 extraites du moteur.
 
+
+
 <div class='container'>
 
 <img width="560"  src="https://dataset-lp.s3.fr-par.scw.cloud/RGB3e8451c9-7ddb-43d9-ae89-90dfd9a010db/rgb_10.png">
 <img width="560"  src="https://dataset-lp.s3.fr-par.scw.cloud/SemanticSegmentation06070cb5-6e43-4253-82df-7c37fa2200ef/segmentation_10.png">
 
+</div>
+
+<div class="fr-download fr-enlarge-link fr-download--card">
+    <p>
+        <a href="[À MODIFIER]" download class="fr-download__link">Télécharger la base de données complète.
+            <span class="fr-download__detail">
+                JPG | JSON – 230,41 Mo
+            </span>
+        </a>
+    </p>
+        <p class="fr-download__desc">RGB | Masques | boîtes de détection (COCO)</p>
 </div>
 
 <br>

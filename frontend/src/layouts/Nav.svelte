@@ -18,6 +18,9 @@ function setSegment(e){
 						<a on:click={setSegment} aria-current="{segment === '/about' ? 'page' : undefined}" class="fr-nav__link" href="about" >À propos</a>
 				</li>
         <li  class="fr-nav__item">
+            <a on:click={setSegment} aria-current="{segment === '/team' ? 'page' : undefined}" class="fr-nav__link" href="team" >Contributeurs</a>
+        </li>
+        <li  class="fr-nav__item">
             <a on:click={setSegment} aria-current="{segment === '/link' ? 'page' : undefined}" class="fr-nav__link" href="link" >Liens utiles</a>
         </li>
 		</ul>
