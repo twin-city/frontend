@@ -2,7 +2,7 @@
   <title>L'équipe</title>
 </svelte:head>
 
-<h1>L'équipe actuelle</h1>
+<h3>L'équipe actuelle</h3>
 <!-- https://gouvfr.atlassian.net/wiki/spaces/DB/pages/222331438/Tuile+-+Tile-->
 <!-- Tuiles horizontales placées dans la grille -->
 <!-- Tuiles verticales placées dans la grille -->
@@ -66,12 +66,14 @@
 
 <br>
 
-<h1>Les futurs Entrepreneurs d'intérêt général</h1>
+<h3>Les futurs Entrepreneurs d'intérêt général</h3>
 
 <p>Le projet EIG
     <a title="intitulé lien externe - ouvre une nouvelle fenêtre" href="https://eig.etalab.gouv.fr/defis/twincity/" target="_blank" rel="noopener">
     TwinCity </a>
 commence mi septembre.</p>
+
+
 <style>
 .avatar {
   border-radius: 30%;

@@ -2,7 +2,7 @@ SHELL = /bin/bash
 
 export CURRENT_PATH := $(shell pwd)
 export APP = twincity
-export APP_VERSION := 0.2
+export APP_VERSION := 0.3
 
 # compose command to merge production file and and dev/tools overrides
 export COMPOSE?=docker-compose

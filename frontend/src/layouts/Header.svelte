@@ -6,14 +6,17 @@
                     <div class="fr-header__brand-top">
                         <div class="fr-header__logo">
                             <p class="fr-logo">
-                                République
-                                <br>Française
+                                MINISTÈRE
+                                <br>DE L’INTÉRIEUR
                             </p>
                         </div>
                     </div>
                     <div class="fr-header__service">
                         <a href="/" title="Accueil - [À MODIFIER | Nom du site / service]">
-                          <p class="fr-header__service-title">TwinCity | Génération d'images synthétiques de villes</p>
+                          <p class="fr-header__service-title">
+                            TwinCity | Génération d'images synthétiques de villes
+                            <span class="fr-badge fr-badge--sm fr-badge--green-emeraude">BETA</span>
+                          </p>
                         </a>
                         <p class="fr-header__service-tagline">Ministère de l'Intérieur - Bureau de valorisation des données </p>
                     </div>

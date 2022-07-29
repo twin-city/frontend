@@ -2,7 +2,7 @@
   <title>Liens utiles</title>
 </svelte:head>
 
-<h2>Les projets proches de TwinCity</h2>
+<h3>Les projets proches de TwinCity</h3>
 
 <div class="fr-grid-row fr-grid-row--gutters">
   <div class="fr-col-6 fr-col-md-4 fr-col-lg-6">
@@ -98,9 +98,77 @@
 
 
 <br>
-<h2>Couches technologiques utilisées</h2>
+<h3>Couches technologiques utilisées</h3>
+<div class="fr-grid-row fr-grid-row--gutters">
+    <div class="fr-col-6 fr-col-md-4 fr-col-lg-3">
+        <div class="fr-tile fr-enlarge-link">
+            <div class="fr-tile__body">
+                <h4 class="fr-tile__title">
+                    <a class="fr-tile__link" href>Unity 3D</a>
+                </h4>
+            </div>
+            <div class="fr-tile__img">
+                <img src="links/unity.png" class="fr-responsive-img" alt="">
+                <!-- L'alternative de l'image (attribut alt) doit à priori rester vide car l'image est illustrative et ne doit pas être restituée aux technologies d’assistance. Vous pouvez toutefois remplir l'alternative si vous estimer qu'elle apporte une information essentielle à la compréhension du contenu non présente dans le texte -->
+            </div>
+        </div>
+    </div>
+    <div class="fr-col-6 fr-col-md-4 fr-col-lg-3">
+        <div class="fr-tile fr-enlarge-link">
+            <div class="fr-tile__body">
+                <h4 class="fr-tile__title">
+                    <a class="fr-tile__link" href>Docker</a>
+                </h4>
+            </div>
+            <div class="fr-tile__img">
+                <img src="links/docker.png" class="fr-responsive-img" alt="">
+                <!-- L'alternative de l'image (attribut alt) doit à priori rester vide car l'image est illustrative et ne doit pas être restituée aux technologies d’assistance. Vous pouvez toutefois remplir l'alternative si vous estimer qu'elle apporte une information essentielle à la compréhension du contenu non présente dans le texte -->
+            </div>
+        </div>
+    </div>
+    <div class="fr-col-6 fr-col-md-4 fr-col-lg-3">
+        <div class="fr-tile fr-enlarge-link">
+            <div class="fr-tile__body">
+                <h4 class="fr-tile__title">
+                    <a class="fr-tile__link" href>Kubernetes</a>
+                </h4>
+            </div>
+            <div class="fr-tile__img">
+                <img src="links/k8.png" class="fr-responsive-img" alt="">
+                <!-- L'alternative de l'image (attribut alt) doit à priori rester vide car l'image est illustrative et ne doit pas être restituée aux technologies d’assistance. Vous pouvez toutefois remplir l'alternative si vous estimer qu'elle apporte une information essentielle à la compréhension du contenu non présente dans le texte -->
+            </div>
+        </div>
+    </div>
+    <div class="fr-col-6 fr-col-md-4 fr-col-lg-3">
+        <div class="fr-tile fr-enlarge-link">
+            <div class="fr-tile__body">
+                <h4 class="fr-tile__title">
+                    <a class="fr-tile__link" href>Svelte</a>
+                </h4>
+            </div>
+            <div class="fr-tile__img">
+                <img src="links/svelte.png" class="fr-responsive-img" alt="">
+                <!-- L'alternative de l'image (attribut alt) doit à priori rester vide car l'image est illustrative et ne doit pas être restituée aux technologies d’assistance. Vous pouvez toutefois remplir l'alternative si vous estimer qu'elle apporte une information essentielle à la compréhension du contenu non présente dans le texte -->
+            </div>
+        </div>
+    </div>
+    <div class="fr-col-6 fr-col-md-4 fr-col-lg-3">
+        <div class="fr-tile fr-enlarge-link">
+            <div class="fr-tile__body">
+                <h4 class="fr-tile__title">
+                    <a class="fr-tile__link" href>Python</a>
+                </h4>
+            </div>
+            <div class="fr-tile__img">
+                <img src="links/python.jpeg" class="fr-responsive-img" alt="">
+                <!-- L'alternative de l'image (attribut alt) doit à priori rester vide car l'image est illustrative et ne doit pas être restituée aux technologies d’assistance. Vous pouvez toutefois remplir l'alternative si vous estimer qu'elle apporte une information essentielle à la compréhension du contenu non présente dans le texte -->
+            </div>
+        </div>
+    </div>
+</div>
 
-<h2>Autres références</h2>
+<br>
+<h3>Autres références</h3>
 
 <ul>
   <li></li>
